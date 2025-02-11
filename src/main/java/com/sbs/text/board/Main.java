@@ -23,7 +23,13 @@ public class Main {
         System.out.print("내용 : ");
         String content = sc.nextLine();
         int id = ++lastArticleId;
-        System.out.printf("%d번 게시물이 등록되었습니다.\n", id);
+
+        Article article = new Article();
+        article.id = id;
+        article.subject = subject;
+        article.content = content;
+
+        System.out.printf("%d번 게시물이 등록되었습니다.\n", article.id);
       } else if (cmd.equals("exit")) {
         break;
       } else {
@@ -34,4 +40,10 @@ public class Main {
 
     sc.close();
   }
+}
+
+class Article {
+  int id;
+  String subject;
+  String content;
 }
